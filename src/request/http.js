@@ -10,7 +10,7 @@ import axios from 'axios'
 //vuex对象
 import store from '@/store/index'
 
-import domMessage from '@/util/tool'
+import {domMessage} from '@/util/tool'
 const messageOnce = new domMessage()
 
 

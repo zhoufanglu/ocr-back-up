@@ -1,7 +1,7 @@
 /**
  * 权限配置文件
  */
-import router from './router'
+import {router} from './router'
 import store from './store'
 import { Message } from 'element-ui'
 
@@ -12,12 +12,16 @@ const whiteList = ['/login', '/404']
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
+
+NProgress.configure({showSpinner: true})
+NProgress.configure({ease:'linear',speed:500})
+
 //添加路由测试
-router.addRoute('Home',{
+/*router.addRoute('Home',{
   path: '/test',
   name: 'test',
   component: () => import('@/views/module_1/a.vue')
-})
+})*/
 console.log(21, router.getRoutes())
 
 // 在守卫中访问元信息

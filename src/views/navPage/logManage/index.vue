@@ -1,6 +1,7 @@
+<!--日志管理-->
 <template>
-  <div class="p-b">
-    <h1>b 需要权限访问</h1>
+  <div class="log-manage">
+    日志管理
   </div>
 </template>
 <script>
@@ -18,6 +19,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.p-name {
+.log-manage {
 }
 </style>

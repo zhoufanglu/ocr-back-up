@@ -30,7 +30,8 @@ module.exports = {
       alias: {
         '@': path.resolve(__dirname, './src'),
         '@a': path.resolve(__dirname, './src/assets'),
-        '@c': path.resolve(__dirname, './src/components')
+        '@c': path.resolve(__dirname, './src/components'),
+        '@v': path.resolve(__dirname, './src/views')
       }
     }
   },
@@ -77,9 +78,12 @@ module.exports = {
           "^/api": ""
         }
       }
-    }
+    },
+    hot: true,
   },
   chainWebpack: config => {
+    // 修复HMR
+    //config.resolve.symlinks(true)
     //webpack的可视化资源分析工具,只在analyz环境下生效
     process.env.VUE_APP_ENV === "analyzer" &&
     config
