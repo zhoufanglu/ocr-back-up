@@ -230,6 +230,7 @@ $warning: #ffe002;
 $balanced: #8ad350;
 $calm: #00aaaf;
 
+//顶部加载样式
 #nprogress {
   .bar{
     background: #f56794 !important; //自定义颜色
@@ -238,6 +239,11 @@ $calm: #00aaaf;
     border-top-color: #f56794 !important;
     border-left-color: #f56794 !important;
   }
+}
+
+.link {
+  color: $positive;
+  cursor: pointer;
 }
 
 //滚动条样式

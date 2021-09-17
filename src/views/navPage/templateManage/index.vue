@@ -3,8 +3,12 @@
   <div class="template-manage">
     <div class="tab-row">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="预制模板" name="preTemp">预制模板</el-tab-pane>
-        <el-tab-pane label="自定义模板" name="cusTemp">自定义模板</el-tab-pane>
+        <el-tab-pane label="预制模板" name="preTemp">
+          <TempTable></TempTable>
+        </el-tab-pane>
+        <el-tab-pane label="自定义模板" name="cusTemp">
+<!--          <TempTable></TempTable>-->
+        </el-tab-pane>
       </el-tabs>
       <div class="operate-row">
         <el-button type="primary" icon="el-icon-circle-plus-outline">创建OCR模板</el-button>
@@ -21,9 +25,10 @@
   </div>
 </template>
 <script>
+import TempTable from './component/TempTable'
 export default {
-  name: '',
-  components: {},
+  name: 'templateManage',
+  components: { TempTable },
   data() {
     return {
       activeName: 'preTemp',
