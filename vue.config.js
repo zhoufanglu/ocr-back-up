@@ -37,8 +37,6 @@ module.exports = {
   },
   // css相关配置
   css: {
-    // 是否使用css分离插件 ExtractTextPlugin
-    extract: true,
     // 开启 CSS source maps?
     sourceMap: true,
     // css预设器配置项
@@ -52,7 +50,7 @@ module.exports = {
         plugins: [
           require('postcss-pxtorem')({
             rootValue : 16, // 换算的基数
-            selectorBlackList  : [], // 忽略转换正则匹配项
+            selectorBlackList  : ['.el-input', 'el-tabs'], // 忽略转换正则匹配项
             propList   : ['*'],
           }),
         ]

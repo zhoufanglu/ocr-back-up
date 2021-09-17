@@ -1,12 +1,11 @@
-<!--看板首页-->
 <template>
-  <div class="home">
-    看板首页
+  <div class="temp-table">
+    312
   </div>
 </template>
 <script>
 export default {
-  name: '',
+  name: 'TempTable',
   components: {},
   data() {
     return {}
@@ -19,6 +18,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.home {
+.temp-table {
 }
 </style>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import '@/assets/scss/element/element-variables.scss'
 
 import { Button, Select, Message, Dropdown,DropdownMenu, DropdownItem, Dialog,
-  Menu, MenuItem, Form, FormItem
+  Menu, MenuItem, Form, FormItem, Tabs, TabPane, Input, Table, TableColumn, Pagination
 } from 'element-ui'
 
 //设置 size
@@ -18,6 +18,12 @@ Vue.use(Button)
   .use(MenuItem)
   .use(Form)
   .use(FormItem)
+  .use(Tabs)
+  .use(TabPane)
+  .use(Input)
+  .use(Table)
+  .use(TableColumn)
+  .use(Pagination)
 
 Vue.prototype.$message = Message
 

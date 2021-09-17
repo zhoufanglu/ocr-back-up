@@ -39,6 +39,8 @@ export default {
   flex-direction: column;
   /*height: 100vh;
   overflow-x: hidden;*/
+  min-width: 800PX!important;
+  overflow-y: auto;
   box-sizing: border-box;
   align-items: stretch;
   width: 100%;

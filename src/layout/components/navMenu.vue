@@ -68,12 +68,14 @@ export default {
     margin-left: 30px;
     border-right: none;
     background-color: $theme;
+    z-index: 99;
     .el-menu-item{
       span{
         display: inline-block;
         height: 40px;
         line-height: 40px;
         color: white;
+        border-bottom: 0.125rem solid $theme;
       }
       &:hover{
         background-color: $theme;
