@@ -5,11 +5,10 @@
     <!--下面主体-->
     <div class="bottom-main">
       <transition name="fade-transform" mode="out-in">
-<!--        <keep-alive :max="10">-->
-          <router-view></router-view>
-<!--          <router-view v-if="$route.meta.keepAlive"></router-view>
-          <router-view v-if="!$route.meta.keepAlive" :key="new Date().getTime()"></router-view>-->
-<!--        </keep-alive>-->
+        <keep-alive :max="10">
+          <router-view v-if="$route.meta.keepAlive"></router-view>
+          <router-view v-if="!$route.meta.keepAlive" :key="new Date().getTime()"></router-view>
+        </keep-alive>
       </transition>
     </div>
   </div>

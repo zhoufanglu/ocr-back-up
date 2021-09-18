@@ -255,3 +255,24 @@ $calm: #00aaaf;
   background-color: #999;
   border-radius: 3px;
 }
+
+/*element公共样式*/
+//分页插件
+.el-pagination{
+  text-align: right;
+  margin: 20px 10px;
+}
+
+//dialog样式
+.el-dialog{
+  .el-dialog__header{
+    >div:first-child{
+      border-bottom: solid 1px #eeeeee;
+      padding-bottom: 16px;
+    }
+  }
+  .el-dialog__body{
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+  }
+}

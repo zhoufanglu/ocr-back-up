@@ -1,56 +1,58 @@
 <template>
   <div class="temp-table">
+    <!--列表-->
     <el-table
+        border
         :header-cell-style="{background:'#eef1f6',color:'#606266'}"
         :data="tempList"
         class="temp-table-element"
     >
-      <el-table-column prop="templateName" label="模板名称"></el-table-column>
-      <el-table-column prop="templateName" label="用户ID"></el-table-column>
-      <el-table-column prop="imageUrl" label="模板图片">
+      <el-table-column prop="templateName" label="模板名称" align="center"></el-table-column>
+      <el-table-column prop="templateName" label="用户ID" align="center"></el-table-column>
+      <el-table-column prop="imageUrl" label="模板图片" align="center">
         <template slot-scope="scope">
           <span class="link">预览</span>
         </template>
       </el-table-column>
-      <el-table-column prop="templateSign" label="模板ID" min-width="190"></el-table-column>
-      <el-table-column prop="templateSign" label="模板类型">
+      <el-table-column prop="templateSign" label="模板ID" min-width="190" align="center"></el-table-column>
+      <el-table-column prop="templateSign" label="模板类型" align="center">
         <template slot-scope="scope">
           xxx
         </template>
       </el-table-column>
-      <el-table-column prop="lastLaunchTime" label="发布时间" min-width="160"></el-table-column>
-      <el-table-column prop="lastUpdateTime" label="修改时间" min-width="160"></el-table-column>
+      <el-table-column prop="lastLaunchTime" label="发布时间" min-width="160" align="center"></el-table-column>
+      <el-table-column prop="lastUpdateTime" label="修改时间" min-width="160" align="center"></el-table-column>
 
       <!-- environmentState 0：生产; 1：测试 -->
       <!-- isForbidden 0：不禁用测试; 1：禁用测试 -->
-      <el-table-column prop="environmentState" label="环境" min-width="110">
+      <el-table-column prop="environmentState" label="环境" min-width="110" align="center">
         <template slot-scope="scope">
           xxx
         </template>
       </el-table-column>
 
-      <el-table-column prop="environmentState" label="状态" min-width="110">
+      <el-table-column prop="environmentState" label="状态" min-width="110" align="center">
         <template slot-scope="scope">
           xxx
         </template>
       </el-table-column>
 
-      <el-table-column prop="action" label="操作" min-width="300">
+      <el-table-column prop="action" label="操作" min-width="300" align="center">
         <template slot-scope="scope">
           <div class="operate-row">
             <div>复制</div>
             <div>试一试</div>
             <div>编辑</div>
             <div>字段配置</div>
-            <div>邮箱关联</div>
+            <div @click="showBindMail()">邮箱关联</div>
             <div>
-              <el-dropdown>
+              <el-dropdown @command="showHistory">
                 <div class="dropdown">
                   历史版本
                 </div>
                 <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item>前后端</el-dropdown-item>
-                  <el-dropdown-item>py文件</el-dropdown-item>
+                  <el-dropdown-item command="frontend">前后端</el-dropdown-item>
+                  <el-dropdown-item command="python">py文件</el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
             </div>
@@ -68,31 +70,35 @@
     </el-table>
 
     <!-- 分页 -->
-    <div class="page">
-      <div class="pageContent">
-        <!--        <Page
-                    :page-size="limit"
-                    :current="offset"
-                    :total="total"
-                    show-total
-                    show-sizer
-                    @on-change="changePage"
-                    @on-page-size-change="changeLimit"
-                ></Page>-->
-      </div>
-    </div>
+    <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page.sync="pagination.currentPage"
+        :page-sizes="pagination.pageSizes"
+        :page-size="pagination.pageSize"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="pagination.total">
+    </el-pagination>
+
+    <!--历史版本 dialog-->
+    <HistoryDialog ref="historyDialog"></HistoryDialog>
+    <!--邮箱关联 dialog-->
+    <BindMailDialog ref="bindMailDialog"></BindMailDialog>
+
   </div>
 </template>
 <script>
+import tableMixin from '@/util/mixins/tableMixin'
+import HistoryDialog from './HistoryDialog' //历史记录弹窗
+import BindMailDialog from './BindMailDialog' //邮箱关联
+
 export default {
   name: 'TempTable',
-  components: {},
+  components: { HistoryDialog, BindMailDialog },
+  mixins: [tableMixin],
   data() {
     return {
       tempList: [],
-      limit: 10,
-      offset: 1,
-      total: 0,
     }
   },
   computed: {},
@@ -169,18 +175,19 @@ export default {
   mounted() {
   },
   methods: {
+    loadTableData() {
+      console.log('重新加载数据')
+    },
+    /********************** 操作点击 ***********************/
+    showHistory(cate) {
+      this.$refs.historyDialog.showDialog(cate)
+    },
     tempDelete(val) {
       console.log(162, val)
-    }
-    /*// 分页
-    changePage(value) {
-      this.offset = value;
     },
-    // 分页
-    changeLimit(value) {
-      this.limit = value;
-
-    },*/
+    showBindMail() {
+      this.$refs.bindMailDialog.showDialog()
+    }
   }
 }
 </script>

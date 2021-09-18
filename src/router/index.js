@@ -86,7 +86,7 @@ const constantRoutes = [
         component: templateManage,
         meta: {
           requireAuth: 1,
-          keepAlive: 0,
+          keepAlive: 1,
           isNavBar: 1
         },
       },
