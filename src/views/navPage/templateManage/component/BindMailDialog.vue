@@ -94,7 +94,7 @@ export default {
     }
     return {
       // bindMail dialog
-      dialogVisible: true,
+      dialogVisible: false,
       mailList: [],
       addMailVal: '',
       addDialogVisible: false,

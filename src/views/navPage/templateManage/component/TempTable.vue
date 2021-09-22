@@ -43,7 +43,7 @@
             <div>复制</div>
             <div>试一试</div>
             <div>编辑</div>
-            <div>字段配置</div>
+            <div @click="showFieldConfig()">字段配置</div>
             <div @click="showBindMail()">邮箱关联</div>
             <div>
               <el-dropdown @command="showHistory">
@@ -84,6 +84,8 @@
     <HistoryDialog ref="historyDialog"></HistoryDialog>
     <!--邮箱关联 dialog-->
     <BindMailDialog ref="bindMailDialog"></BindMailDialog>
+    <!-- 字段配置 dialog -->
+    <FieldConfigDialog ref="fieldConfigDialog"></FieldConfigDialog>
 
   </div>
 </template>
@@ -91,10 +93,11 @@
 import tableMixin from '@/util/mixins/tableMixin'
 import HistoryDialog from './HistoryDialog' //历史记录弹窗
 import BindMailDialog from './BindMailDialog' //邮箱关联
+import FieldConfigDialog from './FieldConfigDialog' //字段配置
 
 export default {
   name: 'TempTable',
-  components: { HistoryDialog, BindMailDialog },
+  components: { HistoryDialog, BindMailDialog, FieldConfigDialog },
   mixins: [tableMixin],
   data() {
     return {
@@ -187,6 +190,9 @@ export default {
     },
     showBindMail() {
       this.$refs.bindMailDialog.showDialog()
+    },
+    showFieldConfig() {
+      this.$refs.fieldConfigDialog.showDialog()
     }
   }
 }

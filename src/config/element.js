@@ -3,7 +3,7 @@ import '@/assets/scss/element/element-variables.scss'
 
 import { Button, Select, Message, Dropdown,DropdownMenu, DropdownItem, Dialog,
   Menu, MenuItem, Form, FormItem, Tabs, TabPane, Input, Table, TableColumn, Pagination,
-  Popover, Popconfirm, Radio, RadioGroup, Divider
+  Popover, Popconfirm, Radio, RadioGroup, Divider, Checkbox, Option, Switch
 } from 'element-ui'
 
 //设置 size
@@ -30,6 +30,9 @@ Vue.use(Button)
   .use(Radio)
   .use(RadioGroup)
   .use(Divider)
+  .use(Checkbox)
+  .use(Option)
+  .use(Switch)
 
 Vue.prototype.$message = Message
 
