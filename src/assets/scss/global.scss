@@ -276,3 +276,7 @@ $calm: #00aaaf;
     padding-bottom: 20px!important;
   }
 }
+//图片层级优先级
+.el-image-viewer__wrapper{
+  z-index: 4000!important;
+}

@@ -11,8 +11,8 @@
         </el-tab-pane>
       </el-tabs>
       <div class="operate-row">
-        <el-button type="primary" icon="el-icon-circle-plus-outline">创建OCR模板</el-button>
-        <el-button class="pdf-btn" type="primary" icon="el-icon-circle-plus-outline">创建PDF模板</el-button>
+        <el-button type="primary" icon="el-icon-circle-plus-outline" @click="openCreateTemp('OCR')">创建OCR模板</el-button>
+        <el-button class="pdf-btn" type="primary" icon="el-icon-circle-plus-outline" @click="openCreateTemp('PDF')">创建PDF模板</el-button>
         <el-input
             class="search-input"
             placeholder="请输入模板名称或id"
@@ -22,13 +22,16 @@
         </el-input>
       </div>
     </div>
+    <!--创建模板弹窗-->
+    <CreateTemplate ref="createTemplate"></CreateTemplate>
   </div>
 </template>
 <script>
 import TempTable from './component/TempTable'
+import CreateTemplate from './component/dialog/CreateTemplate'
 export default {
   name: 'templateManage',
-  components: { TempTable },
+  components: { TempTable, CreateTemplate },
   data() {
     return {
       activeName: 'preTemp',
@@ -45,6 +48,9 @@ export default {
     },
     searchEvent() {
       console.log(this.searchVal)
+    },
+    openCreateTemp(cate) {
+      this.$refs.createTemplate.showDialog(cate)
     }
   }
 }

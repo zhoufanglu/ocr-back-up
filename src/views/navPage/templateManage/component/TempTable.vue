@@ -91,9 +91,9 @@
 </template>
 <script>
 import tableMixin from '@/util/mixins/tableMixin'
-import HistoryDialog from './HistoryDialog' //历史记录弹窗
-import BindMailDialog from './BindMailDialog' //邮箱关联
-import FieldConfigDialog from './FieldConfigDialog' //字段配置
+import HistoryDialog from './dialog/HistoryDialog' //历史记录弹窗
+import BindMailDialog from './dialog/BindMailDialog' //邮箱关联
+import FieldConfigDialog from './dialog/FieldConfigDialog' //字段配置
 
 export default {
   name: 'TempTable',
