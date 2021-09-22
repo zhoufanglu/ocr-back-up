@@ -47,29 +47,28 @@
               <el-option label="222" value="222"></el-option>
             </el-select>
           </el-form-item>
-
-          <!--图片预览-->
-          <el-image
-              v-if="fileObject.fileType === 'image/jpeg'"
-              :src="fileObject.displayPath"
-              :preview-src-list="[fileObject.displayPath]"
-          ></el-image>
-          <!--pdf预览-->
-          <iframe
-              v-if="fileObject.fileType === 'application/pdf'"
-              :src="fileObject.displayPath"
-              frameborder="0"
-          ></iframe>
-          <!--重新上传-->
-          <div class="upload-again" @click="uploadAgain">
-            <i class="el-icon-refresh-right"></i>
-            请重新上传
-          </div>
         </el-form>
+        <!--图片预览-->
+        <el-image
+            v-if="fileObject.fileType === 'image/jpeg'"
+            :src="fileObject.displayPath"
+            :preview-src-list="[fileObject.displayPath]"
+        ></el-image>
+        <!--pdf预览-->
+        <iframe
+            v-if="fileObject.fileType === 'application/pdf'"
+            :src="fileObject.displayPath"
+            frameborder="0"
+        ></iframe>
+        <!--重新上传-->
+        <div class="upload-again" @click="uploadAgain">
+          <i class="el-icon-refresh-right"></i>
+          请重新上传
+        </div>
       </div>
     </div>
     <span slot="footer" class="dialog-footer">
-        <el-button @click="nextStep" >下一步</el-button>
+        <el-button @click="nextStep">下一步</el-button>
     </span>
   </el-dialog>
 </template>
@@ -93,7 +92,7 @@ export default {
       rules: {
         fileName: [
           {required: true, message: '请填写模板名', trigger: 'blur'},
-          { min: 1, max: 40, message: "长度不大于40字符", trigger: "blur" },
+          {min: 1, max: 40, message: "长度不大于40字符", trigger: "blur"},
         ]
       }
     }
@@ -118,9 +117,9 @@ export default {
       this.fileObject.fileName = fileObj.name.split('.')[0]
       this.imgSaveToUrl(file)
       this.fileObject.fileType = fileObj.type
-      if(fileObj.type === 'image/jpeg'){
+      if (fileObj.type === 'image/jpeg') {
 
-      }else if(fileObj.type === 'application/pdf'){
+      } else if (fileObj.type === 'application/pdf') {
 
       }
     },
@@ -170,22 +169,27 @@ export default {
     margin: auto;
     @include vertical-center;
     min-height: 300px;
+
     img {
       width: 280px;
       height: 186px;
     }
+
     p {
       margin: 16px 0;
       width: 280px;
       font-size: 14px;
       color: #666666;
     }
+
     display: flex;
     flex-direction: column;
-    .upload-after{
+
+    .upload-after {
       width: 100%;
       text-align: center;
-      .upload-again{
+
+      .upload-again {
         height: 36px;
         line-height: 36px;
         opacity: 0.5;
