@@ -50,7 +50,7 @@ module.exports = {
         plugins: [
           require('postcss-pxtorem')({
             rootValue : 16, // 换算的基数
-            selectorBlackList  : ['.el-input', 'el-tabs', 'el-dialog', 'el-switch'], // 忽略转换正则匹配项
+            selectorBlackList  : ['.el-input', 'el-tabs', 'el-dialog', 'el-switch', 'iconfont'], // 忽略转换正则匹配项
             propList   : ['*'],
           }),
         ]

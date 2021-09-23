@@ -32,7 +32,7 @@ router.beforeEach((to, from, next)=>
   //获取token
   let { token } = store.state.mod_1.userInfo
 
-  console.log(24, token)
+  //console.log(24, token)
   if(token){
     let requireAuth = to.matched.some(record => record.meta.requireAuth)
     if(requireAuth){

@@ -4,7 +4,7 @@ import '@/assets/scss/element/element-variables.scss'
 import { Button, Select, Message, Dropdown,DropdownMenu, DropdownItem, Dialog,
   Menu, MenuItem, Form, FormItem, Tabs, TabPane, Input, Table, TableColumn, Pagination,
   Popover, Popconfirm, Radio, RadioGroup, Divider, Checkbox, Option, Switch, Upload,
-  Image
+  Image, Breadcrumb, BreadcrumbItem,Tooltip
 } from 'element-ui'
 
 //设置 size
@@ -36,6 +36,9 @@ Vue.use(Button)
   .use(Switch)
   .use(Upload)
   .use(Image)
+  .use(Breadcrumb)
+  .use(BreadcrumbItem)
+  .use(Tooltip )
 
 Vue.prototype.$message = Message
 

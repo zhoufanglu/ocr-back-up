@@ -12,7 +12,7 @@
                     v-for="menu in menuList"
                     :key="menu.name"
       >
-        <i class="iconfont" v-html="menu.meta.icon"></i>
+<!--        <i class="iconfont" v-html="menu.meta.icon"></i>-->
         <span slot="title">{{menu.name}}</span>
       </el-menu-item>
 
@@ -44,11 +44,12 @@ export default {
 
     initMenu() {
       let routerList = this.$router.getRoutes()
-      console.log(46, routerList)
+      //console.log(46, routerList)
       //查找home路由的子路由，然后渲染出来
       this.menuList = routerList.filter(
           (i) => i.parent && i.parent.name === 'layout' && i.meta.isNavBar
       )
+      console.log(52, this.menuList)
     }
   },
 }

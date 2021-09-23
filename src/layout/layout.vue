@@ -3,12 +3,15 @@
     <!--顶部 navbar-->
     <navBar></navBar>
     <!--下面主体-->
-    <div class="bottom-main">
+    <div class="bottom-main"
+      :class="$route.path==='/templateManage/editTemp'?'no-padding':null"
+    >
       <transition name="fade-transform" mode="out-in">
-        <keep-alive :max="10">
+        <router-view></router-view>
+<!--        <keep-alive :max="10">
           <router-view v-if="$route.meta.keepAlive"></router-view>
           <router-view v-if="!$route.meta.keepAlive" :key="new Date().getTime()"></router-view>
-        </keep-alive>
+        </keep-alive>-->
       </transition>
     </div>
   </div>
@@ -25,6 +28,7 @@ export default {
     }
   },
   created() {
+    console.log(30, this.$route.path)
   },
   mounted() {
   },
@@ -44,8 +48,16 @@ export default {
   align-items: stretch;
   width: 100%;
   .bottom-main{
-    height: calc(100% - 70px);
+    border: solid 1px red;
+    box-sizing: border-box;
+    //height: calc(100% - 60px);
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
     padding: 30px 50px;
+  }
+  .no-padding{
+    padding: 0;
   }
 }
 </style>

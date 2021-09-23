@@ -151,8 +151,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .p-nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-width: 800PX;
   height: 60px;
   padding: 0 50px;
+  box-sizing: border-box;
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, .1);
   display: flex;
   justify-content: space-between;
