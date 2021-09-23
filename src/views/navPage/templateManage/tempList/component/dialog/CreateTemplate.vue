@@ -68,7 +68,7 @@
       </div>
     </div>
     <span slot="footer" class="dialog-footer">
-        <el-button @click="nextStep">下一步</el-button>
+        <el-button @click="nextStep" :disabled="fileObject.displayPath===''">下一步</el-button>
     </span>
   </el-dialog>
 </template>
@@ -147,7 +147,8 @@ export default {
       this.$refs.repeatForm.validate((valid) => {
         if (valid) {
           console.log(150, this.fileObject)
-          alert('submit!')
+          this.$message.success('上传成功！')
+          this.$router.push('/templateManage/editTemp')
         } else {
           console.log('error submit!!');
           return false

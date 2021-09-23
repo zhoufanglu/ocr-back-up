@@ -93,6 +93,9 @@ export default {
     confirm() {
       this.dialogVisible = false
       console.log(93, this.activeId)
+    },
+    uploadPython() {
+
     }
   }
 }

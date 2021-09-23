@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   /* 部署应用包的基本URL */
-  publicPath: process.env.NODE_ENV === "production" ? "./" : "./",
+  publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
   /* 生产环境构建文件的目录 defalut: dist */
   outputDir: process.env.outputDir,
   /* 放置生成的静态文件目录（js css img） */
