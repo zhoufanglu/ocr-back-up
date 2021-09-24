@@ -28,7 +28,7 @@ export default {
     }
   },
   created() {
-    console.log(30, this.$route.path)
+    //console.log(30, this.$route.path)
   },
   mounted() {
   },

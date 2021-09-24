@@ -280,3 +280,7 @@ $calm: #00aaaf;
 .el-image-viewer__wrapper{
   z-index: 4000!important;
 }
+//全局.el-input高度设置
+.el-input__inner{
+  min-height: 26PX!important;
+}
