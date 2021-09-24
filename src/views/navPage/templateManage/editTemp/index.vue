@@ -12,6 +12,12 @@
     </div>
     <div class="content">
       <SideOperatePanel></SideOperatePanel>
+      <div class="draw-panel">
+        12
+      </div>
+      <div class="operate-list">
+        12
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +40,7 @@ export default {
 .edit-temp {
   display: flex;
   flex-direction: column;
+  height: 100%;
   .nav-bar{
     width: 100%;
     height: 60px;
@@ -52,8 +59,21 @@ export default {
     }
   }
   .content{
-    height: 2000px;
-
+    display: flex;
+    justify-content: space-between;
+    background-color: #f1f1f0;
+    padding: 20px;
+    box-sizing: border-box;
+    border: solid 1px green;
+    margin-top: 60px;
+    height: calc(100% - 60px);
+    .draw-panel{
+      background-color: white;
+      margin-left: 60px;
+    }
+    .operate-list{
+      background-color: white;
+    }
   }
 }
 </style>

@@ -80,6 +80,7 @@ export default {
   left: 10px;
   border: solid 1px #eeeeee;
   top: calc(50% - 150px);
+  background-color: white;
   .iconfont{
     font-size: 20px;
     text-align: center;

@@ -24,6 +24,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .template-manage {
+  height: 100%;
 }
 </style>
 <style lang="scss">
