@@ -8,7 +8,7 @@
           <OperateTable></OperateTable>
         </el-tab-pane>
         <el-tab-pane label="识别日志" name="识别日志">
-          2
+          <DiscernFilter></DiscernFilter>
         </el-tab-pane>
       </el-tabs>
     </div>
@@ -17,10 +17,11 @@
 <script>
 import OperateFilter from './component/OperateFilter'
 import OperateTable from './component/OperateTable'
+import DiscernFilter from './component/DiscernFilter'
 
 export default {
   name: 'logManage',
-  components: { OperateFilter, OperateTable },
+  components: { OperateFilter, OperateTable, DiscernFilter },
   data() {
     return {
       activeName: '操作日志'

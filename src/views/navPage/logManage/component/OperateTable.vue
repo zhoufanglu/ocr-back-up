@@ -11,7 +11,6 @@
       <el-table-column type="expand">
         <template slot-scope="props">
           <code-diff
-              file-name="file"
               :old-string="oldString"
               :new-string="newString"
               output-format="side-by-side"
